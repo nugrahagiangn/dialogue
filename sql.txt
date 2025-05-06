@@ -1,0 +1,52 @@
+CREATE TABLE tblemployees (
+	id SERIAL PRIMARY KEY,
+  FullName VARCHAR(255),
+  MobileNumber VARCHAR(255),
+  Email VARCHAR(255),
+  Password VARCHAR(255),
+  RegDate TIMESTAMP DEFAULT NOW()
+);
+
+CREATE TABLE tblproduct (
+	id_product SERIAL PRIMARY KEY,
+	product_name VARCHAR(255),
+  price INTEGER,
+  image VARCHAR(255),
+  created_at TIMESTAMP 
+);
+
+CREATE TABLE tblreview (
+	id SERIAL PRIMARY KEY,
+	product_id INTEGER,
+  employee_id INTEGER,
+  rate INTEGER,
+  coment VARCHAR(255) 
+);
+
+SELECT * FROM tblemployees 
+SELECT * FROM tblproduct
+SELECT * FROM tblreview
+
+DELETE from tblproduct WHERE id_product = 5
+
+ALTER TABLE tblproduct ADD description TEXT 
+
+
+SELECT ID FROM tblemployees WHERE (Email='gian.syntax@gmail.com' OR MobileNumber='081295704758') AND Password='62c8ad0a15d9d1ca38d5dee762a16e01';
+
+SELECT * FROM tblproduct ORDER BY id_product DESC
+
+SELECT version();
+
+
+INSERT INTO tblreview (product_id, employee_id, rate, coment) VALUES
+(6, 1, 4, 'Kualitas bagus, tapi pengiriman agak lama.'),
+(7, 1, 5, 'mantap, bakau nya langsung dari francis.'),
+(8, 1, 5, 'Top banget, recommended!'),
+(9, 1, 2, 'Kurang puas, bahan tidak sesuai deskripsi.');
+
+INSERT INTO tblreview (product_id, employee_id, rate, coment) VALUES
+(6, 2, 1, 'Kualitas Jelek.'),
+(7, 2, 5, 'bagus, rexomended'),
+(8, 2, 4, 'lumayan, tapi packing kurang rapi!'),
+(9, 2, 4, 'lumayana');
