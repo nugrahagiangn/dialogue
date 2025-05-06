@@ -1,5 +1,5 @@
 <?php
 session_start();
-session_unset(); // unset session variable
-session_destroy(); // destroy session
+session_unset();
+session_destroy();
 header('location:signin.php');

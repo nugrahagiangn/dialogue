@@ -15,7 +15,6 @@ if (!isset($_GET['id_product']) || !is_numeric($id_product)) {
     die("ID produk tidak valid.");
 }
 
-// Ambil data produk
 $query = "SELECT * FROM tblproduct WHERE id_product = $1";
 $result = pg_query_params($conn, $query, array($id_product));
 
